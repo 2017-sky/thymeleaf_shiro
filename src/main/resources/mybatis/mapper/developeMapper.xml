@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nuc.bean.shiro_thyeleaf_file_mail.dao.UserDao">
+    <insert id="insert" parameterType="nuc.bean.shiro_thyeleaf_file_mail.entity.User">
+        insert into shiro_user(name,pssword,perms) values (#{id},#{name},#{password},#{perms})
+    </insert>
+
+    <update id="update" parameterType="nuc.bean.shiro_thyeleaf_file_mail.entity.User">
+       update shiro_user name=#{name},password =#{password},perms=#{perms} where id=#{id}
+    </update>
+
+    <select id="list" resultType="nuc.bean.shiro_thyeleaf_file_mail.entity.User">
+        select * from shiro_user
+   </select>
+    <select id="queryByName" resultType="nuc.bean.shiro_thyeleaf_file_mail.entity.User">
+        select * from shiro_user where name=#{name}
+   </select>
+</mapper>
